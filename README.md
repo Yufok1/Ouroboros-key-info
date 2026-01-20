@@ -11,7 +11,7 @@ Evolve ~100K adapter parameters while keeping base models frozen — 100x more e
 | | |
 |---|---|
 | **[🌌 Live Demo](https://huggingface.co/spaces/tostido/Cascade-Hyperlattice)** | Watch evolution in action |
-| **[🧠 Neural Network](https://huggingface.co/spaces/tostido/Ouroboros)** | The evolved model |
+| **[🧠 Champion Model](https://huggingface.co/datasets/tostido/key-data/tree/main/models)** | The evolved DreamerV3 model |
 | **[📊 Dataset](https://huggingface.co/datasets/tostido/key-data)** | 40K+ logged evolutionary events |
 
 ---
