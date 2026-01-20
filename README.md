@@ -25,8 +25,8 @@ The Ouroboros-Key source code is available via GitHub Sponsors.
 | Tier | Price | What you get |
 |------|-------|--------------|
 | **🔑 Source Access** | $100 one-time | Private repo invite, full codebase |
-| **📚 Guided** | $150/month | Access + ongoing coaching |
-| **🤝 Hands-On** | $500 one-time | I do one conversion with you + support |
+| **🤝 Hands-On Conversion** | $500 one-time | I do one model conversion with you + support |
+| **🎤 Speaking Engagement** | $2,000 one-time | Talk at your company/conference, includes source access |
 
 ### **[→ Sponsor on GitHub](https://github.com/sponsors/Yufok1)**
 
