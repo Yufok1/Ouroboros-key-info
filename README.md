@@ -93,7 +93,8 @@ Neuroevolution works when:
 | Tier | Price | What You Get |
 |------|-------|--------------|
 | **🔑 Source Access** | $100 one-time | Full codebase, private repo invite |
-| **🤝 Hands-On** | $50/hour | I work with you to evolve adapters for your domain |
+| **🤝 Hands-On** | $50/hour | I coach you through wiring your own model |
+| **🛠️ Done-For-You** | $500 flat | I wire up your custom model for you |
 | **🎤 Speaking** | $2,000 | Talk at your company on gradient-free optimization |
 
 ### **[→ Sponsor on GitHub](https://github.com/sponsors/Yufok1)**
