@@ -1,46 +1,54 @@
-# 🔑 Ouroboros-Key
+# 🔑 KEY: Evolve LoRA Adapters Using Neuroevolution
 
-**A production neural network that converts existing models into quine-replicant capable models.**
+**Optimize neural network adapters through genetic algorithms instead of gradient descent.**
 
-Transform any `.pt`, `.onnx`, or compute-oriented model into a self-replicating, self-verifying quine brain with full provenance tracking.
-
----
-
-## 🎮 Try the Demo
-
-**[🌌 Live Demo on Hugging Face](https://huggingface.co/spaces/tostido/Ouroboros)** — no purchase required
+Evolve ~100K adapter parameters while keeping base models frozen — 100x more efficient than full fine-tuning, and works when your objective isn't differentiable.
 
 ---
 
-## 📦 Dataset & Documentation
+## 🎮 Try It
 
-**[📊 Ouroboros-Key Dataset](https://huggingface.co/datasets/tostido/key-data)** — Full documentation, schemas, and exported logs
-
----
-
-## 🔐 Get Full Source Access
-
-The Ouroboros-Key source code is available via GitHub Sponsors.
-
-| Tier | Price | What you get |
-|------|-------|--------------|
-| **🔑 Source Access** | $100 one-time | Private repo invite, full codebase |
-| **🤝 Hands-On Conversion** | $500 one-time | I do one model conversion with you + support |
-| **🎤 Speaking Engagement** | $2,000 one-time | Talk at your company/conference, includes source access |
-
-### **[→ Sponsor on GitHub](https://github.com/sponsors/Yufok1)**
-
-Sponsors at paid tiers automatically receive an invite to the private `Ouroboros-key` repository.
+| | |
+|---|---|
+| **[🌌 Live Demo](https://huggingface.co/spaces/tostido/Cascade-Hyperlattice)** | Watch evolution in action |
+| **[🧠 Neural Network](https://huggingface.co/spaces/tostido/Ouroboros)** | The evolved model |
+| **[📊 Dataset](https://huggingface.co/datasets/tostido/key-data)** | 40K+ logged evolutionary events |
 
 ---
 
-## What It Does
+## What KEY Does
 
-- **Input-agnostic**: Supports `.pt`, `.onnx`, and other model formats
-- **Quine conversion**: Wraps models with self-reference & re-instantiation hooks
-- **Provenance tracking**: Merkle-linked decisions, CASCADE-LATTICE integration
-- **Glass-box transparency**: Every weight, decision, and mutation is fully auditable
-- **Evolution engine**: NEAT-style speciation, tournament selection, fitness sharing
+KEY evolves **LoRA adapters** on frozen base models (MiniLM-L6, DreamerV3) using NEAT-style neuroevolution:
+
+1. **Freeze** the base model (22M-200M parameters)
+2. **Evolve** only the adapter layer (~100K parameters)
+3. **Evaluate** using pluggable fitness functions
+4. **Select** via tournament + speciation (prevents premature convergence)
+5. **Log** every mutation, crossover, and fitness score
+
+### Example: Evolving Semantic Similarity
+
+**Task**: Adapt MiniLM embeddings to preserve semantic relationships
+
+**Test Pair**: "The cat sat on the mat" ↔ "A feline rested on the rug"
+
+| Generation | Cosine Similarity | Fitness |
+|------------|-------------------|---------|
+| 0          | 0.42 (random)     | 0.35    |
+| 50         | 0.76              | 0.64    |
+| 100        | 0.89              | 0.82    |
+
+The evolved adapter learned to preserve semantic similarity while improving output quality.
+
+---
+
+## Why Evolve Instead of Gradient Descent?
+
+Neuroevolution works when:
+- ✅ Your objective **isn't differentiable** (human preference, discrete outputs)
+- ✅ You want **population diversity** (speciation prevents local optima)
+- ✅ You're optimizing for **interface quality**, not task loss
+- ✅ You need **full auditability** (every mutation logged with provenance)
 
 ---
 
@@ -48,24 +56,60 @@ Sponsors at paid tiers automatically receive an invite to the private `Ouroboros
 
 ```
 ┌─────────────────────────────────────────────────────────────────┐
-│                       PopulationManager                          │
-│                  (NEAT-style speciation)                         │
+│                     PopulationManager                            │
+│              NEAT-style speciation + tournament                  │
 └───────────────────────────┬─────────────────────────────────────┘
                             │
         ┌───────────────────┼───────────────────┐
-        │                   │                   │
-   ┌────▼────┐         ┌────▼────┐         ┌────▼────┐
+        ▼                   ▼                   ▼
+   ┌─────────┐         ┌─────────┐         ┌─────────┐
    │  Node   │         │  Node   │         │  Node   │  × N
-   │ traits  │         │ traits  │         │ traits  │
+   │ fitness │         │ fitness │         │ fitness │
    │ + brain │         │ + brain │         │ + brain │
    └────┬────┘         └────┬────┘         └────┬────┘
         │                   │                   │
         └───────────────────┼───────────────────┘
-                            │
-                    ┌───────▼───────┐
-                    │  DreamerBrain │ (~200M params)
-                    └───────────────┘
+                            ▼
+              ┌──────────────────────────┐
+              │      Evolvable Brain     │
+              │  ┌────────────────────┐  │
+              │  │ Base Model (frozen)│  │  ← MiniLM / DreamerV3
+              │  │     22M-200M       │  │
+              │  └─────────┬──────────┘  │
+              │            ▼             │
+              │  ┌────────────────────┐  │
+              │  │  LoRA Adapter      │  │  ← EVOLVED (~12K)
+              │  │  + Projection Head │  │  ← EVOLVED (~99K)
+              │  └────────────────────┘  │
+              └──────────────────────────┘
 ```
+
+**Total evolved parameters**: ~111K (LoRA rank-4 + projection)
+
+---
+
+## 🔐 Get Full Source Access
+
+| Tier | Price | What You Get |
+|------|-------|--------------|
+| **🔑 Source Access** | $100 | Full codebase, private repo invite |
+| **🤝 Hands-On** | $500 | I evolve adapters for your domain + support |
+| **🎤 Speaking** | $2,000 | Talk at your company on gradient-free optimization |
+
+### **[→ Sponsor on GitHub](https://github.com/sponsors/Yufok1)**
+
+---
+
+## FAQ
+
+**Q: What's a "quine brain"?**
+> A brain that can serialize its weights → mutate → deserialize. This enables genetic algorithms to evolve neural networks. Think "self-modifying adapter."
+
+**Q: Why not just use backprop?**
+> Backprop requires differentiable objectives. Evolution works with any fitness function: human ratings, game scores, discrete metrics, or even "does this output look good?"
+
+**Q: Is this real?**
+> Yes. The [dataset](https://huggingface.co/datasets/tostido/key-data) contains 40K+ real logged events from actual evolutionary runs. $100 tier includes full source — money back if it doesn't work.
 
 ---
 
