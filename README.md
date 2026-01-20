@@ -109,7 +109,7 @@ Neuroevolution works when:
 > Backprop requires differentiable objectives. Evolution works with any fitness function: human ratings, game scores, discrete metrics, or even "does this output look good?"
 
 **Q: Is this real?**
-> Yes. The [dataset](https://huggingface.co/datasets/tostido/key-data) contains 40K+ real logged events from actual evolutionary runs. $100 tier includes full source — money back if it doesn't work.
+> Yes. The [dataset](https://huggingface.co/datasets/tostido/key-data) contains 40K+ real logged events from actual evolutionary runs. $100 tier includes full source.
 
 ---
 
